@@ -19,3 +19,9 @@ export const calculationText = (id) => (
 		}
 		)
 		
+		export const addText = (text) => (
+			{
+				type: 'To Do',
+				term: text
+			}   
+			)

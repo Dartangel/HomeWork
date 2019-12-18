@@ -51,7 +51,5 @@ operations: {
     backgroundColor: 'red'
 },
 
-
-
 }
 )

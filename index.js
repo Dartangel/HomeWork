@@ -8,7 +8,6 @@ import { Provider } from 'react-redux'
 import reducer from './reduser/reducer'
 
 
-
 export const mystore = createStore(reducer,applyMiddleware(createLogger()))
 console.log(mystore.getState())
 

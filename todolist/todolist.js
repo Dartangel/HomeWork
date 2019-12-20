@@ -11,20 +11,25 @@ export class ToDoList extends Component {
     constructor(props) {
         super(props)
         this.state = {
-           
+           list: []
         }
 
 
     }
 
-    textImput(term) {
+    textImput=(term)=> {
+        
         this.setState({ imputTerm: term })
     }
+    
 
     createtext = () => {
-        const text = this.state.imputTerm;
-        this.setState({ text })
+       const list = this.state.imputTerm;
+        
+        this.setState({list:''})
         console.log('text-----'   +this.props.counter);
+        console.log('text-----'   +this.props.id);
+        this.props.savetostore(list)
 
     }
 
@@ -42,7 +47,7 @@ export class ToDoList extends Component {
                         </View>
                         <View style={{ backgroundColor: 'black', flex: 2 }}>
                             <TouchableOpacity
-                                onPress={() => this.createtext(this.state.text)}>
+                                onPress={() => this.createtext(this.state.imputTerm)}>
                                 <Text style={{ fontSize: 30, color: 'green', alignContent: 'center' }}>Add</Text>
                             </TouchableOpacity>
                         </View>
@@ -62,13 +67,15 @@ export class ToDoList extends Component {
 
 function mapStateToProps(state) {
     return {
-        text: state.text,
+        list: state.list,
     }
 }
 
 function mapDispatchToProps(dispatch) {
+    
     return {
-        createtext: (text) => dispatch(addText(text)),
+        
+        savetostore: (list) => dispatch(addText(list)),
 
     }
 }

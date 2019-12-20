@@ -1,14 +1,17 @@
 export const initialState = {
-    counter: ''
+    id=0
 }
-function reducer2(state = initialState, action) {
+function reducer2(state = [], action) {
     switch (action.type) {
         case 'To Do':
-            return { counter: term }
+            return {
+                 counter: [],
+                 id=id++
+                 }
         
             
     }
     return state
-}    console.log('text'+counter);
+}    
 export default reducer2
 
